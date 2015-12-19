@@ -20,6 +20,7 @@ module.exports = {
     }, // a function which produces all the messages
     post: function (message) {
       // insert query into database
+      console.log('trynig to insert this into the db ' + JSON.stringify(message));
       var queryString = "INSERT messages (text, user, room) VALUES (?, ?, ?)";
       var queryArgs = [
         message.text,
@@ -29,6 +30,8 @@ module.exports = {
       db.query(queryString, queryArgs, function(err, results) {
         if(err){
           throw err;
+        } else {
+          console.log('message successfully inserted');
         }
       });
     } // a function which can be used to insert a message into the database

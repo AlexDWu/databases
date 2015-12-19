@@ -19,8 +19,12 @@ module.exports = {
 
   users: {
     // Ditto as above
-    get: function (req, res) {},
-    post: function (req, res) {}
+    get: function (req, res) {
+      res.end();
+    },
+    post: function (req, res) {
+      res.end();
+    }
   }
 };
 
